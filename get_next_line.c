@@ -35,8 +35,6 @@ char	*read_until_newline(int fd, char *stash)
 
 	if (!stash)
 		stash = ft_strdup("");
-	if (!stash)
-		return (NULL);
 	while (!ft_strchr(stash, '\n'))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
