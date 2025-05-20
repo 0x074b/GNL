@@ -3,22 +3,19 @@
 #include <unistd.h>    // close
 #include "get_next_line.h"
 
+char *get_next_line(int fd);
+
 int main(void)
 {
-    int     fd;
-    char    *line;
+	int fd = open("oui.txt", O_RDONLY);
+	char *line;
 
-    fd = open("test.txt", O_RDONLY);
-    if (fd == -1)
-    {
-        perror("Erreur d'ouverture de fichier");
-        return (1);
-    }
-    while ((line = get_next_line(fd)) != NULL)
-    {
-        printf("Ligne lue: %s", line);
-        free(line);
-    }
-    close(fd);
-    return (0);
+	while ((line = get_next_line(fd)) != NULL)
+	{
+		printf("%s", line);
+		free(line);
+	}
+	close(fd);
+	return 0;
 }
+

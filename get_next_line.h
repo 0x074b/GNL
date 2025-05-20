@@ -19,6 +19,6 @@ char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t siz);
 char	*ft_strjoin(char const *s1, char const *s2);
-
+char	*ft_strdup(const char *s);
 
 #endif

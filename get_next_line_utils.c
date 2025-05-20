@@ -89,3 +89,25 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(new, s2, totallen + 1);
 	return (new);
 }
+
+char	*ft_strdup(const char *s)
+{
+	char	*no;
+	int		i;
+	int		size;
+
+	size = 0;
+	while (s[size])
+		size++;
+	no = malloc(sizeof(char) * (size + 1));
+	if (!no)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		no[i] = s[i];
+		i++;
+	}
+	no[i] = '\0';
+	return (no);
+}
